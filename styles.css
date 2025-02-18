@@ -1,0 +1,291 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and General Layout */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #000000; /* Black background */
+    color: #FFFFFF; /* White text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header (Navigation Bar) */
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0b0b0b;
+    position: relative;
+    z-index: 10;
+}
+
+header .logo {
+    font-size: 2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFFFFF; /* White logo text */
+    font-family: cursive;
+    position: relative;
+    display: inline-block;
+    animation: logoAnimation 3s infinite;
+}
+
+@keyframes logoAnimation {
+    0% {
+        transform: scale(1);
+        color: #FFFFFF;
+    }
+    50% {
+        transform: scale(1.1);
+        color: #f76c6c; /* Highlight color */
+    }
+    100% {
+        transform: scale(1);
+        color: #FFFFFF;
+    }
+}
+
+
+header .logo:hover {
+    transform: scale(1.1); /* Logo scale effect on hover */
+}
+
+/* Navigation Links */
+header nav a {
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.1em;
+    color: #FFFFFF; /* White navigation links */
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+header nav a.active, header nav a:hover {
+    color: #f76c6c; /* Highlight color on hover */
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000000;
+    animation: fadeIn 1.5s ease-in-out; /* Animation effect for the home section */
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Image Section */
+.home-img img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #f76c6c;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.home-img img:hover {
+    transform: rotate(15deg); /* Rotate effect on hover */
+}
+
+/* Home Content */
+.home-content {
+    max-width: 600px;
+    text-align: center;
+}
+
+.home-content h1 {
+    font-size: 2.5em;
+    color: #FFFFFF;
+    animation: slideIn 1.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icon {
+    margin: 0 10px;
+    font-size: 2em;
+    color: #FFFFFF;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #f76c6c;
+    transform: scale(1.2); /* Enlarging the icon on hover */
+}
+
+/* Skills Section */
+.skills {
+    background-color: #000000;
+    padding: 40px 10%;
+    line-height: 1.6;
+    animation: fadeIn 1.5s ease-in-out;
+
+}
+.skills h2 {
+    font-size: 2em;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.skills ul {
+    padding: 0;
+}
+
+.skills li {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    opacity: 0;
+    animation: fadeInItem 0.5s ease-in-out forwards;
+}
+
+.skills li:nth-child(even) {
+    animation-delay: 0.2s; /* Delay animation for even items */
+}
+
+.skills li:nth-child(odd) {
+    animation-delay: 0.4s; /* Delay animation for odd items */
+}
+
+@keyframes fadeInItem {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Education Section */
+.education {
+    padding: 40px 10%;
+    background-color: #000000;
+}
+
+.education h2 {
+    font-size: 2em;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+.university-container{
+    margin-bottom: 40px;
+
+}
+/* Experience Section */
+.experience {
+    padding: 40px 10%;
+    background-color: #000000;
+}
+.experience li {
+    margin-bottom: 10px; /* Add more space between job entries */
+}
+
+.experience h2 {
+    font-size: 2em;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+/* Experience Job Titles */
+.job-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+   
+}
+.job-container{
+    margin-bottom: 50px; 
+
+}
+
+.date {
+    font-size: 1em;
+    margin-left: 20px;
+}
+
+.company {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .home {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-img img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .social-icons {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .skills, .education, .experience, .contact {
+        padding: 30px 5%;
+    }
+
+    .skills li, .education li, .experience li {
+        font-size: 1em;
+    }
+}
+
+
+/* Divider Styling */
+.divider {
+    border: none;
+    border-top: 2px solid #f76c6c; /* Red color for the line */
+    margin: 20px 0; /* Adds space above and below the line */
+}
+
+/* Add the scrolling effect for sections */
+section {
+    opacity: 0; /* Initially hidden */
+    transition: opacity 1s ease-in-out;
+}
+
+/* Section appears when it is in the viewport */
+section.visible {
+    opacity: 1;
+}
+
+/* Specific section styles */
+.education, .experience, .contact {
+    padding: 40px 10%;
+    background-color: #000000;
+}
+
+/* Additional effect for better visibility */
+.education.visible, .experience.visible {
+    animation: fadeInItem 1s ease-in-out;
+}

@@ -268,16 +268,8 @@ header nav a.active, header nav a:hover {
     margin: 20px 0; /* Adds space above and below the line */
 }
 
-/* Add the scrolling effect for sections */
-section {
-    opacity: 0; /* Initially hidden */
-    transition: opacity 1s ease-in-out;
-}
 
-/* Section appears when it is in the viewport */
-section.visible {
-    opacity: 1;
-}
+
 
 /* Specific section styles */
 .education, .experience, .contact {
@@ -288,4 +280,9 @@ section.visible {
 /* Additional effect for better visibility */
 .education.visible, .experience.visible {
     animation: fadeInItem 1s ease-in-out;
+}
+
+@keyframes fadeInItem {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
